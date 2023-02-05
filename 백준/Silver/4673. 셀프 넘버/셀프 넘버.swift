@@ -2,9 +2,7 @@ var set:Set<Int> = []
 
 for i in 1...10000 {
     set.insert(d(i))
-}
-
-for i in 1...10000 {
+    
     if !set.contains(i) {
         print(i)
     }
