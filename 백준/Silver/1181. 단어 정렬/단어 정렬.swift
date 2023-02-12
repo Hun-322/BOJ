@@ -1,17 +1,11 @@
 var set = Set<String>()
+var arr = [String]()
 
 for _ in 1...Int(readLine()!)! {
     set.insert(readLine()!)
 }
 
-var arr = set.sorted(by:
-            {
-    if $0.count == $1.count {
-        return $0 < $1
-    }else{
-        return $0.count < $1.count
-    }
-})
+arr = set.sorted(by: { $0.count == $1.count ? $0 < $1 : $0.count < $1.count} )
 
 for i in arr {
     print(i)
