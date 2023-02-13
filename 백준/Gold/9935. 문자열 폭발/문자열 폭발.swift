@@ -1,15 +1,13 @@
-var str = readLine()!
-var bomb = readLine()!
-var stack = [String]()
+let str = readLine()!
+let bomb = readLine()!
+var stack = ""
 
 for s in str {
-    stack.append(String(s))
+    stack.append(s)
     
-    if s == bomb.last! && stack.count >= bomb.count && stack[(stack.count-bomb.count)...].joined() == bomb{
-        (0..<bomb.count).forEach { _ in
-                        stack.popLast()
-                    }
+    if s == bomb.last && stack.suffix(bomb.count) == bomb {
+        stack.removeLast(bomb.count)
     }
 }
 
-print(stack.isEmpty ? "FRULA" : stack.joined())
+print(stack.isEmpty ? "FRULA" : stack)
