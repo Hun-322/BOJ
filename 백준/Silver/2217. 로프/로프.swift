@@ -8,8 +8,7 @@ for _ in 1...N {
 arr = arr.sorted(by: >)
 var max = arr[0]
 
-for i in 0..<arr.count {
-    
+for i in 1..<N {
     if max < arr[i] * (i+1) {
         max = arr[i] * (i+1)
     }
