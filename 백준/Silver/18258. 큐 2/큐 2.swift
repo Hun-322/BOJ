@@ -1,6 +1,5 @@
 import Foundation
 
-// 빠른 입력 FileIO
 final class FileIO {
     private var buffer:[UInt8]
     private var index: Int
@@ -88,33 +87,28 @@ struct Queue {
 }
 
 let file = FileIO()
-let n = file.readInt()
-var queue: Queue = Queue()
+var q = Queue()
 var answer = ""
 
-for _ in 0..<n {
+for _ in 0..<file.readInt() {
     let command = file.readString()
+    
     switch command {
     case 448:
-        // push
-        queue.push(file.readInt())
+        q.push(file.readInt())
     case 335:
-        // pop
-        answer += "\(queue.pop())\n"
+        answer += "\(q.pop())\n"
     case 443:
-        // size
-        answer += "\(queue.size)\n"
+        answer += "\(q.size)\n"
     case 559:
-        // empty
-        answer += "\(queue.empty)\n"
+        answer += "\(q.empty)\n"
     case 553:
-        // front
-        answer += "\(queue.front)\n"
+        answer += "\(q.front)\n"
     case 401:
-        // back
-        answer += "\(queue.back)\n"
+        answer += "\(q.back)\n"
     default:
         continue
     }
 }
+
 print(answer)
