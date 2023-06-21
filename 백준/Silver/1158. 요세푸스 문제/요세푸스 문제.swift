@@ -4,10 +4,8 @@ var arr = (1...n).map{$0}
 
 print("<", terminator: "")
 
-while true {
-    if arr.count == 1 { break }
+while arr.count != 1 {
     print(arr.remove(at: k), terminator: ", ")
-    
     k = (k + (input[1] - 1)) % arr.count
 }
 
