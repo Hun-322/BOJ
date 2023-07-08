@@ -14,14 +14,15 @@ for _ in 1...n {
 }
 
 func isPrime(num: Int) -> Bool {
-    if num <  4 {
-        return num == 1 || num == 0 ? false : true
+    if num < 3 {
+        return num == 2 ? true : false
     }
     
-    for i in 2...Int(sqrt(Double(num))) {
+    for i in 2...Int(sqrt(Double(num)) + 1) {
         if num % i == 0 {
             return false
         }
     }
+    
     return true
 }
