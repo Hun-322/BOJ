@@ -1,9 +1,17 @@
-let computerNumber = Int(readLine()!)!
+import Foundation
+
+let computerNum = Int(readLine()!)!
 let edge = Int(readLine()!)!
 var arr = [Int:[Int]]()
-var visited = [Int]()
+var visited = Array(repeating: false, count: computerNum+1)
+var answer = 0
 
-for i in 1...computerNumber {
+if edge == 0 {
+    print(0)
+    exit(0)
+}
+
+for i in 1...computerNum {
     arr[i] = []
 }
 
@@ -14,11 +22,11 @@ for _ in 1...edge {
 }
 
 func dfs(_ node: Int) {
-    if visited.contains(node) {
+    if visited[node] {
         return
     }
     
-    visited.append(node)
+    visited[node] = true
     
     for n in arr[node]! {
         dfs(n)
@@ -27,4 +35,10 @@ func dfs(_ node: Int) {
 
 dfs(1)
 
-print(visited.count - 1)
+for i in visited {
+    if i {
+        answer += 1
+    }
+}
+
+print(answer - 1)
