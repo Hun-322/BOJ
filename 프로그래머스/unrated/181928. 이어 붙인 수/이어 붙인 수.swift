@@ -6,9 +6,9 @@ func solution(_ num_list:[Int]) -> Int {
     
     for i in arr {
         if Int(i)! % 2 == 1 {
-            even += i
-        } else {
             odd += i
+        } else {
+            even += i
         }
     }
     
