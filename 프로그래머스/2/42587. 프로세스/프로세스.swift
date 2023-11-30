@@ -6,8 +6,6 @@ func solution(_ priorities:[Int], _ location:Int) -> Int {
     var answer = 0
     
     while !arr.isEmpty {
-        print(arr)
-        print(idx)
         let maxValue = arr.max()!
         idx -= 1
         
