@@ -38,5 +38,5 @@ func solution(_ str1:String, _ str2:String) -> Int {
     
     let unionNum = arr1.count + arr2.count - intersectionNum
     
-    return Int(65536 * Double(intersectionNum) / Double(unionNum))
+    return Int(65536 * intersectionNum / unionNum)
 }
