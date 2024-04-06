@@ -1,11 +1,6 @@
 import Foundation
 
-// 두 사람이 선물을 주고받은 기록이 있다면, 이번 달까지 두 사람 사이에 더 많은 선물을 준 사람이 다음 달에 선물을 하나 받습니다.
-// 두 사람이 선물을 주고받은 기록이 하나도 없거나 주고받은 수가 같다면, 선물 지수가 더 큰 사람이 선물 지수가 더 작은 사람에게 선물을 하나 받습니다.
-// !선물 지수!는 이번 달까지 자신이 친구들에게 준 선물의 수에서 받은 선물의 수를 뺀 값입니다.
-// 물을 가장 많이 받을 친구가 받을 선물의 수
 func solution(_ friends:[String], _ gifts:[String]) -> Int {
-    
     var friendsStatus = [[Int]](repeating: [Int](repeating: 0, count: friends.count), count: friends.count)
     var arr = [[Int]]()
     var nextGift = [Int]()
